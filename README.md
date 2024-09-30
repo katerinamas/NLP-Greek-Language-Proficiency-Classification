@@ -8,10 +8,10 @@ This repository is dedicated to the NLP Greek Language Proficiency Classificatio
 The goal of this project is to provide an automated tool for the classification of Greek language proficiency, aiding educational institutions and learners by delivering swift and accurate assessments of language capabilities.
 
 ## Dataset
-The dataset used in this project was generated from two main sources:
+The dataset used in this project was created from two main sources:
 
 1. **329 authentic texts** from the [Greek Language Center's website](https://www.greek-language.gr/certification/dbs/teachers/index.html) (CEFR levels A1 to C2). These texts are categorized by proficiency levels and can be accessed publicly.
-2. **711 generated texts** using **ChatGPT-4o** under specific prompts. These texts were designed to simulate various language proficiency levels (A1 to C2), ensuring a balanced and diverse dataset for training the machine learning models.
+2. **711 generated texts** using **ChatGPT-4o** under specific prompts for Conditional Text Generation. These texts were designed to simulate various language proficiency levels (A1 to C2), ensuring a balanced and diverse dataset for training the machine learning models.
 
 ### Dataset Versions:
 Due to the dataset size and limitations, we organized the texts into two versions:
@@ -28,7 +28,6 @@ This dual-source and dual-structure approach enabled better training for machine
 - Scikit-Learn
 - NLTK
 - spaCy
-- Gensim for Word2Vec
 - SMOTE for handling class imbalance
 
 ## Features
@@ -59,6 +58,9 @@ We evaluated the performance of three models: Support Vector Machine (SVM), Mult
    - **Training Accuracy**: 93%
    - The RNN model exhibited strong performance on the training set but suffered from overfitting, resulting in a lower test accuracy. The model struggled most with intermediate and advanced level distinctions.
 
+## Conclusions
+There were several misclassifications between Levels B and C. Models performed best at classifying Level A instances with high accuracy on both training and test sets. However, Levels B and C had lower accuracy and were often confused with each other. This is due to the nature of the proficiency levels: Level A (Basic User) is simpler and more distinct, while Levels B and C include more complex language features like advanced vocabulary and syntax. Greek’s complex morphology adds to this difficulty. Level B had the lowest accuracy, as it represents a less clearly defined intermediate level between beginner and advanced.
+
 ## Installation
 To set up this project for use or development, follow these steps:
 
@@ -82,7 +84,7 @@ To set up this project for use or development, follow these steps:
 
 3. **Proceed with project setup and usage as required**:
 ### Explanation:
-- **Step 1**: Cloning the repository is straightforward; make sure to replace `spymavro` with your actual GitHub username.
+- **Step 1**: Cloning the repository is straightforward; make sure to replace with your actual GitHub username.
 - **Step 2**: This step covers:
   - Checking for Python installation.
   - Setting up a virtual environment, which is optional but recommended.
